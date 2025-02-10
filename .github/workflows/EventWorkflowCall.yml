@@ -1,0 +1,19 @@
+name: Event workflow call
+
+on:
+  workflow_call:
+    inputs:
+      environment:
+        required: true
+        type: string
+        default: "staging"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Deploy to ${{ inputs.environment }}
+        run: echo "Deploying to ${{ inputs.environment }}
