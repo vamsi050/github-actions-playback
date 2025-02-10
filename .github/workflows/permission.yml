@@ -1,7 +1,7 @@
 name: permission example
 
 on:  
-  pull_request:  
+  push:  
 
 jobs:  
   update-file:  
