@@ -1,4 +1,4 @@
-name: event workflow call2
+name: "event workflow call2"
 
 on:
   push:
