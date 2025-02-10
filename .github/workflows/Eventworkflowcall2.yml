@@ -1,0 +1,12 @@
+name: event workflow call2
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  trigger-reusable:
+    uses: ./.github/workflows/EventWorkflowCall.yml
+    with:
+      environment: "main"
