@@ -1,0 +1,20 @@
+name: permission example
+
+on:  
+  pull_request:  
+
+jobs:  
+  update-file:  
+    runs-on: ubuntu-latest  
+    permissions:  
+      contents: write  
+
+    steps:  
+      - name: Commit change  
+        run: |  
+          echo "Hello World" >> file.txt  
+          git config user.name "github-actions"  
+          git config user.email "actions@github.com"  
+          git add file.txt  
+          git commit -m "Update file"
+          git push
