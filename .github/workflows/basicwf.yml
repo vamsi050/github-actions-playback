@@ -2,7 +2,7 @@ name: basic Workflow
 
 run-name: ${{github.actor}}
 
-on: pull_request
+on: push
 
 jobs:
  job1:
