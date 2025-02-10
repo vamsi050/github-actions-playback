@@ -6,7 +6,7 @@ on:
 
 jobs:
   build-and-test:
-    uses: ./.github/workflows/build.yml
+    uses: ./.github/workflows/workflow1.yml
     with:
       node-version: "16.x"
       run-tests: true
