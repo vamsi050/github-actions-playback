@@ -1,0 +1,11 @@
+name: basic Workflow
+
+run-name: ${{github.actor}}
+
+on: pull_request
+
+jobs:
+ job1:
+  runs-on: ubuntu-latest
+  steps:
+   - run: echo "display the workflow for ubuntu"
