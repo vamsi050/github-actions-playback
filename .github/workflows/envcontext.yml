@@ -1,0 +1,27 @@
+name: Workflow with Environment Variables
+
+on:
+  push:
+    branches:
+      - main
+
+env: 
+  WORKFLOW_ENV: "Defined at Workflow Level"
+
+jobs:
+  example_job:
+    runs-on: ubuntu-latest
+    env:
+      JOB_ENV: "Defined at Job Level"
+    
+    steps:
+      - name: Display Workflow and Job Environment Variables
+        run: |
+          echo "WORKFLOW_ENV: $WORKFLOW_ENV"
+          echo "JOB_ENV: $JOB_ENV"
+
+      - name: Step-Specific Environment Variable
+        env:
+          STEP_ENV: "Defined at Step Level"
+        run: |
+          echo "STEP_ENV: $STEP_ENV"
