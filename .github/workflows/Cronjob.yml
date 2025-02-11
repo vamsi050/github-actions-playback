@@ -1,0 +1,11 @@
+name: Cron job
+on:
+  schedule:
+    - cron: '23 7 11 2 2'
+    
+
+jobs:
+  test_schedule:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Cron job syntax"
