@@ -1,0 +1,14 @@
+name: Manual trigger
+
+on:
+ workflow_dispatch:
+  inputs:
+   debug:
+    type: boolean
+    required: true
+
+jobs:
+ echo-input:
+  runs-on: ubuntu-latest
+  steps:
+   - run:  echo "check the input"
