@@ -1,35 +1,18 @@
-name:  Workflow1
+name: Reusable Workflow
 
 on:
   workflow_call:
     inputs:
-      node-version:
+      message:
+        description: "A custom message for the workflow"
         required: true
         type: string
-      run-tests:
-        required: false
-        type: boolean
-        default: true
+    
 
 jobs:
-  build:
+  example_job:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check out code
-        uses: actions/checkout@v3
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ inputs.node-version }}
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Run lint
-        run: npm run lint
-
-      - name: Run tests
-        if: ${{ inputs.run-tests }}
-        run: npm test
+      - name: Print Custom Message
+        run: echo "Message: ${{ inputs.message }}"
